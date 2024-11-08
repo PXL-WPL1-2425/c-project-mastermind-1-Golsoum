@@ -4,14 +4,14 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:mastermind_1"
-        mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        mc:Ignorable="d" x:Name="Mastermind"
+        Title="" Height="450" Width="800">
     <Grid>
         <ComboBox HorizontalAlignment="Left" Margin="0,11,0,0" VerticalAlignment="Top" Width="200"/>
         <ComboBox HorizontalAlignment="Left" Margin="200,11,0,0" VerticalAlignment="Top" Width="200"/>
         <ComboBox HorizontalAlignment="Left" Margin="400,11,0,0" VerticalAlignment="Top" Width="200"/>
         <ComboBox HorizontalAlignment="Left" Margin="600,11,0,0" VerticalAlignment="Top" Width="200"/>
-        <Button x:Name="controlButton" Content="check code" HorizontalAlignment="Left" Margin="350,265,0,0" VerticalAlignment="Top" Height="31" Width="149"/>
+        <Button x:Name="controlButton" Content="check code" HorizontalAlignment="Left" Margin="350,265,0,0" VerticalAlignment="Top" Height="31" Width="149" Click="controlButton_Click"/>
 
     </Grid>
 </Window>
