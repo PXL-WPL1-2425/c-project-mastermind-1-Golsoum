@@ -34,6 +34,43 @@ namespace mastermind_1
             }
             Mastermind.Title = "MasterMind (" + string.Join(",", chosenColor) + ")";
             FillComboBoxes(ref allColors);
+           
+           
+            
+        }
+        private void ChoosingLabelColors(object sender, RoutedEventArgs e)
+        {
+        
+            //
+            ComboBox comboBox = (ComboBox)sender;
+            if (comboBox.SelectedItem != null)
+            {
+                string selectedColor = comboBox.SelectedItem.ToString();
+               
+                SolidColorBrush colorBrush = new SolidColorBrush((Color)ColorConverter.ConvertFromString(selectedColor));
+
+                switch (comboBox.Name)
+                {
+                    case "firstComboBox":
+                        firstLabel.Background = colorBrush;
+/*                        firstLabel.Content = selectedColor;
+*/
+                        break;
+                    case "secondComboBox":
+                        secondLabel.Background = colorBrush;
+/*                        secondLabel.Content = selectedColor;
+*/                        break;
+                    case "thirdComboBox":
+                        thirdLabel.Background = colorBrush;
+/*                        thirdLabel.Content = selectedColor;
+*/                        break;
+                    case "fourthComboBox":
+                        fourthLabel.Background = colorBrush;
+/*                        fourthLabel.Content = selectedColor;
+*/                        break;
+                }
+            }
+
         }
         private void FillComboBoxes(ref string[] items)
         {
@@ -45,12 +82,14 @@ namespace mastermind_1
                 fourthComboBox.Items.Add(item);
             }
 
+          
         }
 
+       
 
         private void controlButton_Click(object sender, RoutedEventArgs e)
         {
-            //cmdb
+           
         }
     }
 }
