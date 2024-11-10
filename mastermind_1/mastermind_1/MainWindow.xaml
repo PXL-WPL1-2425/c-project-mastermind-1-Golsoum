@@ -7,10 +7,10 @@
         mc:Ignorable="d" x:Name="Mastermind"
         Title="" Height="450" Width="800">
     <Grid>
-        <ComboBox HorizontalAlignment="Left" Margin="0,11,0,0" VerticalAlignment="Top" Width="200"/>
-        <ComboBox HorizontalAlignment="Left" Margin="200,11,0,0" VerticalAlignment="Top" Width="200"/>
-        <ComboBox HorizontalAlignment="Left" Margin="400,11,0,0" VerticalAlignment="Top" Width="200"/>
-        <ComboBox HorizontalAlignment="Left" Margin="600,11,0,0" VerticalAlignment="Top" Width="200"/>
+        <ComboBox Name="firstComboBox" HorizontalAlignment="Left" Margin="0,11,0,0" VerticalAlignment="Top" Width="200"/>
+        <ComboBox Name="secondComboBox" HorizontalAlignment="Left" Margin="200,11,0,0" VerticalAlignment="Top" Width="200"/>
+        <ComboBox Name="thirdComboBox" HorizontalAlignment="Left" Margin="400,11,0,0" VerticalAlignment="Top" Width="200"/>
+        <ComboBox Name="fourthComboBox"  HorizontalAlignment="Left" Margin="600,11,0,0" VerticalAlignment="Top" Width="200"/>
         <Button x:Name="controlButton" Content="check code" HorizontalAlignment="Left" Margin="350,265,0,0" VerticalAlignment="Top" Height="31" Width="149" Click="controlButton_Click"/>
 
     </Grid>

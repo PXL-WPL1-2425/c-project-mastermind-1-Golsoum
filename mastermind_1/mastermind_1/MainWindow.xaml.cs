@@ -33,12 +33,24 @@ namespace mastermind_1
 
             }
             Mastermind.Title = "MasterMind (" + string.Join(",", chosenColor) + ")";
+            FillComboBoxes(ref allColors);
+        }
+        private void FillComboBoxes(ref string[] items)
+        {
+            foreach (var item in items)
+            {
+                firstComboBox.Items.Add(item);
+                secondComboBox.Items.Add(item);
+                thirdComboBox.Items.Add(item);
+                fourthComboBox.Items.Add(item);
+            }
 
         }
 
+
         private void controlButton_Click(object sender, RoutedEventArgs e)
         {
-
+            //cmdb
         }
     }
 }
