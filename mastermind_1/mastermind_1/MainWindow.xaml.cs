@@ -16,14 +16,14 @@ namespace mastermind_1
     /// </summary>
     public partial class MainWindow : Window
     {
-      
-            string[] allColors = { "white", "green", "blue", "red", "orange", "yellow" };
+        string[] chosenColor = new string[4];
+
+        string[] allColors = { "white", "green", "blue", "red", "orange", "yellow" };
         
         public MainWindow()
         {
             InitializeComponent();
             Random rnd = new Random();
-            string[] chosenColor = new string[4];
 
             for(int i = 0; i< 4; i++)
             {
@@ -85,11 +85,58 @@ namespace mastermind_1
           
         }
 
-       
 
+        private void SetBorderColor(int index, Color color)
+        {
+            SolidColorBrush borderBrush = new SolidColorBrush(color);
+            switch (index)
+            {
+                case 0:
+                    firstLabel.BorderBrush = borderBrush;
+                    firstLabel.BorderThickness = new Thickness(2);
+                    break;
+                case 1:
+                    secondLabel.BorderBrush = borderBrush;
+                    secondLabel.BorderThickness = new Thickness(2);
+                    break;
+                case 2:
+                    thirdLabel.BorderBrush = borderBrush;
+                    thirdLabel.BorderThickness = new Thickness(2);
+                    break;
+                case 3:
+                    fourthLabel.BorderBrush = borderBrush;
+                    fourthLabel.BorderThickness = new Thickness(2);
+                    break;
+            }
+        }
         private void controlButton_Click(object sender, RoutedEventArgs e)
         {
-           
+            string[] userPickedColors =  {
+                                 firstComboBox.SelectedItem.ToString(),
+                                 secondComboBox.SelectedItem.ToString(),
+                                 thirdComboBox.SelectedItem.ToString(),
+                                 fourthComboBox.SelectedItem.ToString() 
+            };  
+
+            for (int i = 0; i< userPickedColors.Length; i++)
+            {
+                if (userPickedColors[i] == chosenColor[i])
+                {
+                    SetBorderColor(i, Colors.DarkRed);
+
+                }
+                else if(chosenColor.Contains(userPickedColors[i])) {
+                   
+                    SetBorderColor(i, Colors.Wheat);
+
+                }
+                else
+                {
+                    SetBorderColor(i, Colors.Transparent);
+
+                }
+            }
+
         }
     }
 }
